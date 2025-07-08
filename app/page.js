@@ -18,6 +18,7 @@ import {
 } from 'react-icons/fa';
 import { GiClothes } from 'react-icons/gi';
 import { MdEmail, MdOutlineExpandMore } from 'react-icons/md';
+import Image from 'next/image';
 
 const ViratClothes = () => {
   const [showMoreProducts, setShowMoreProducts] = useState(false);
@@ -133,11 +134,15 @@ const ViratClothes = () => {
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <img
-            src="/traditional-saree-bg.jpg"
-            alt="Traditional Saree Background"
-            className="w-full h-full object-cover"
-          />
+           <Image
+      src="/traditional-saree-bg.jpg"
+      alt="Traditional Saree Background"
+      fill
+      className="object-cover"
+      priority={true} // Important for above-the-fold images
+      quality={75}   // Optimizes image quality
+      sizes="100vw"  // Full viewport width
+    />
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -185,54 +190,61 @@ const ViratClothes = () => {
           </motion.div>
 
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="md:w-1/2"
-            >
-              <img
-                src="/img/1 (22).jpeg"
-                alt="Virat Clothes Store Interior"
-                className="rounded-lg shadow-xl w-full h-auto"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="md:w-1/2"
-            >
-              <h3 className="text-2xl font-semibold text-amber-800 mb-4">
-                Your Trusted Traditional Clothing Store
-              </h3>
-              <p className="text-gray-700 mb-4">
-                Located in the heart of Kolkata near the historic Kalighat Mandir, Virat Clothes has been
-                serving customers with authentic traditional sarees and clothing for years. We take pride in
-                offering quality fabrics that celebrate India's rich textile heritage.
-              </p>
-              <p className="text-gray-700 mb-4">
-                Our collection includes a wide range of traditional wear from various regions of India, carefully
-                selected to meet the needs of modern women who appreciate traditional craftsmanship.
-              </p>
-              <div className="flex flex-wrap gap-4 mt-6">
-                <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
-                  <GiClothes className="text-amber-700" />
-                  <span>Authentic Fabrics</span>
-                </div>
-                <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
-                  <FaRupeeSign  className="text-amber-700" />
-                  <span>Affordable Prices</span>
-                </div>
-                <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
-                  <FaMapMarkerAlt className="text-amber-700" />
-                  <span>Prime Location</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+  <motion.div
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="md:w-1/2"
+  >
+    {/* Added relative container with fixed height */}
+    <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-xl">
+      <Image
+        src="/img/1 (22).jpeg"
+        alt="Virat Clothes Store Interior"
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        priority={false}
+      />
+    </div>
+  </motion.div>
+  
+  <motion.div
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="md:w-1/2"
+  >
+    <h3 className="text-2xl font-semibold text-amber-800 mb-4">
+      Your Trusted Traditional Clothing Store
+    </h3>
+    <p className="text-gray-700 mb-4">
+      Located in the heart of Kolkata near the historic Kalighat Mandir, Virat Clothes has been
+      serving customers with authentic traditional sarees and clothing for years. We take pride in
+      offering quality fabrics that celebrate India&apos;s rich textile heritage.
+    </p>
+    <p className="text-gray-700 mb-4">
+      Our collection includes a wide range of traditional wear from various regions of India, carefully
+      selected to meet the needs of modern women who appreciate traditional craftsmanship.
+    </p>
+    <div className="flex flex-wrap gap-4 mt-6">
+      <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
+        <GiClothes className="text-amber-700" />
+        <span>Authentic Fabrics</span>
+      </div>
+      <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
+        <FaRupeeSign className="text-amber-700" />
+        <span>Affordable Prices</span>
+      </div>
+      <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
+        <FaMapMarkerAlt className="text-amber-700" />
+        <span>Prime Location</span>
+      </div>
+    </div>
+  </motion.div>
+</div>
         </div>
       </section>
 
@@ -264,7 +276,7 @@ const ViratClothes = () => {
               <h3 className="text-xl font-semibold mb-3">Traditional Sarees</h3>
               <p className="text-gray-700">
                 From Banarasi to Kanjivaram, we offer a wide variety of authentic traditional sarees that
-                showcase India's textile diversity.
+                showcase India&apos;s textile diversity.
               </p>
             </motion.div>
 
@@ -297,7 +309,7 @@ const ViratClothes = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Affordable Options</h3>
               <p className="text-gray-700">
-                Quality traditional wear at prices that won't break the bank, making heritage accessible to
+                Quality traditional wear at prices that won&apos;t break the bank, making heritage accessible to
                 everyone.
               </p>
             </motion.div>
@@ -410,22 +422,24 @@ const ViratClothes = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {images.slice(0, showMoreProducts ? images.length : 12).map((image, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={image}
-                    alt={`Traditional clothing ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              </motion.div>
+  key={index}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: index * 0.05 }}
+  className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
+>
+  <div className="h-48 relative overflow-hidden"> {/* Added 'relative' here */}
+    <Image
+      src={image}
+      alt={`Traditional clothing ${index + 1}`}
+      fill
+      className="object-cover hover:scale-105 transition duration-500"
+      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
+      loading={index < 4 ? 'eager' : 'lazy'}
+    />
+  </div>
+</motion.div>
             ))}
           </div>
 
@@ -482,7 +496,7 @@ const ViratClothes = () => {
                           />
                         ))}
                       </div>
-                      <p className="text-gray-700 italic mb-6">"{testimonial.comment}"</p>
+                      <p className="text-gray-700 italic mb-6">&quot;{testimonial.comment}&quot;</p>
                       <p className="font-semibold text-amber-800">— {testimonial.name}</p>
                     </div>
                   </div>
