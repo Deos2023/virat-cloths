@@ -20,6 +20,7 @@ import { GiClothes } from 'react-icons/gi';
 import { MdEmail, MdOutlineExpandMore } from 'react-icons/md';
 import Image from 'next/image';
 
+
 const ViratClothes = () => {
   const [showMoreProducts, setShowMoreProducts] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -92,41 +93,7 @@ const ViratClothes = () => {
       </Head>
 
       {/* Navigation */}
-      <nav className="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <GiClothes className="text-2xl" />
-            <span className="text-xl font-bold">Virat Clothes</span>
-          </div>
-          <div className="hidden md:flex space-x-6">
-            <a href="#home" className="hover:text-amber-200 transition">
-              Home
-            </a>
-            <a href="#about" className="hover:text-amber-200 transition">
-              About
-            </a>
-            <a href="#products" className="hover:text-amber-200 transition">
-              Products
-            </a>
-            <a href="#testimonials" className="hover:text-amber-200 transition">
-              Testimonials
-            </a>
-            <a href="#contact" className="hover:text-amber-200 transition">
-              Contact
-            </a>
-          </div>
-          <a
-            href="https://wa.me/918100551766"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded flex items-center space-x-1"
-          >
-            <FaWhatsapp />
-            <span className="hidden sm:inline">WhatsApp</span>
-          </a>
-        </div>
-      </nav>
-
+     
       {/* Hero Section */}
       <section
         id="home"
@@ -135,7 +102,7 @@ const ViratClothes = () => {
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="absolute inset-0 flex items-center justify-center">
            <Image
-      src="/traditional-saree-bg.jpg"
+      src="/bg.jpg"
       alt="Traditional Saree Background"
       fill
       className="object-cover"
@@ -177,76 +144,76 @@ const ViratClothes = () => {
 
       {/* About Section */}
       <section id="about" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4">About Virat Clothes</h2>
-            <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
-          </motion.div>
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="text-center mb-12"
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4">About Virat Clothes</h2>
+      <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
+    </motion.div>
 
-          <div className="flex flex-col md:flex-row items-center gap-8">
-  <motion.div
-    initial={{ opacity: 0, x: -50 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="md:w-1/2"
-  >
-    {/* Added relative container with fixed height */}
-    <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-xl">
-      <Image
-        src="/img/1 (22).jpeg"
-        alt="Virat Clothes Store Interior"
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        priority={false}
-      />
-    </div>
-  </motion.div>
-  
-  <motion.div
-    initial={{ opacity: 0, x: 50 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="md:w-1/2"
-  >
-    <h3 className="text-2xl font-semibold text-amber-800 mb-4">
-      Your Trusted Traditional Clothing Store
-    </h3>
-    <p className="text-gray-700 mb-4">
-      Located in the heart of Kolkata near the historic Kalighat Mandir, Virat Clothes has been
-      serving customers with authentic traditional sarees and clothing for years. We take pride in
-      offering quality fabrics that celebrate India&apos;s rich textile heritage.
-    </p>
-    <p className="text-gray-700 mb-4">
-      Our collection includes a wide range of traditional wear from various regions of India, carefully
-      selected to meet the needs of modern women who appreciate traditional craftsmanship.
-    </p>
-    <div className="flex flex-wrap gap-4 mt-6">
-      <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
-        <GiClothes className="text-amber-700" />
-        <span>Authentic Fabrics</span>
-      </div>
-      <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
-        <FaRupeeSign className="text-amber-700" />
-        <span>Affordable Prices</span>
-      </div>
-      <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
-        <FaMapMarkerAlt className="text-amber-700" />
-        <span>Prime Location</span>
-      </div>
-    </div>
-  </motion.div>
-</div>
+    <div className="flex flex-col md:flex-row items-center gap-8">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full md:w-1/2"
+      >
+        {/* Changed to aspect ratio container */}
+        <div className="relative aspect-[4/3] md:aspect-[3/4] w-full rounded-lg overflow-hidden shadow-xl">
+          <Image
+            src="/img/1 (22).jpeg" // Double check this path is correct
+            alt="Virat Clothes Store Interior"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={false}
+          />
         </div>
-      </section>
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full md:w-1/2"
+      >
+        <h3 className="text-2xl font-semibold text-amber-800 mb-4">
+          Your Trusted Traditional Clothing Store
+        </h3>
+        <p className="text-gray-700 mb-4">
+          Located in the heart of Kolkata near the historic Kalighat Mandir, Virat Clothes has been
+          serving customers with authentic traditional sarees and clothing for years. We take pride in
+          offering quality fabrics that celebrate India&apos;s rich textile heritage.
+        </p>
+        <p className="text-gray-700 mb-4">
+          Our collection includes a wide range of traditional wear from various regions of India, carefully
+          selected to meet the needs of modern women who appreciate traditional craftsmanship.
+        </p>
+        <div className="flex flex-wrap gap-4 mt-6">
+          <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
+            <GiClothes className="text-amber-700" />
+            <span>Authentic Fabrics</span>
+          </div>
+          <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
+            <FaRupeeSign className="text-amber-700" />
+            <span>Affordable Prices</span>
+          </div>
+          <div className="bg-amber-100 px-4 py-2 rounded-lg flex items-center space-x-2">
+            <FaMapMarkerAlt className="text-amber-700" />
+            <span>Prime Location</span>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* What We Sell Section */}
       <section className="py-16 bg-amber-100">
@@ -461,7 +428,25 @@ const ViratClothes = () => {
     })()}
   </div>
 </section>
-
+ <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="overflow-hidden shadow-xl"
+          >
+          
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.567200778309!2d88.3412946!3d22.5204159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277941ab957e7%3A0x5d26a4a849567b1!2sVirat%20Clothes!5e0!3m2!1sen!2sin!4v1751970521903!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              className="w-full"
+              title="New Wings Foundation Location"
+            ></iframe>
+          </motion.div>
       {/* Testimonials Section */}
       <section id="testimonials" className="py-16 bg-white">
         <div className="container mx-auto px-4">
